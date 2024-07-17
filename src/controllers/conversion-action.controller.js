@@ -15,7 +15,7 @@ export const createConversionAction = async (req, res) => {
     await conversionAction.save();
 
     const response = await axios.post(
-      "https://googleads.googleapis.com/v11/customers/{customer_id}/conversionActions",
+      `https://googleads.googleapis.com/v11/customers/${process.env.CUSTOMER_ID}/conversionActions`,
       {
         name,
         category,

@@ -32,7 +32,7 @@ export const uploadClickConversion = async (req, res) => {
     await clickConversion.save();
 
     const response = await axios.post(
-      "https://googleads.googleapis.com/v11/customers/{customer_id}/clickConversions:upload",
+      `https://googleads.googleapis.com/v11/customers/${process.env.CUSTOMER_ID}/clickConversions:upload`,
       {
         gclid,
         gbraid,
